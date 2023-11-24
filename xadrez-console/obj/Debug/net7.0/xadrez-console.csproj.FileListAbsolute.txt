@@ -1,0 +1,15 @@
+/Users/gui/Projects/xadrez-console/xadrez-console/bin/Debug/net7.0/xadrez-console
+/Users/gui/Projects/xadrez-console/xadrez-console/bin/Debug/net7.0/xadrez-console.deps.json
+/Users/gui/Projects/xadrez-console/xadrez-console/bin/Debug/net7.0/xadrez-console.runtimeconfig.json
+/Users/gui/Projects/xadrez-console/xadrez-console/bin/Debug/net7.0/xadrez-console.dll
+/Users/gui/Projects/xadrez-console/xadrez-console/bin/Debug/net7.0/xadrez-console.pdb
+/Users/gui/Projects/xadrez-console/xadrez-console/obj/Debug/net7.0/xadrez-console.csproj.AssemblyReference.cache
+/Users/gui/Projects/xadrez-console/xadrez-console/obj/Debug/net7.0/xadrez-console.GeneratedMSBuildEditorConfig.editorconfig
+/Users/gui/Projects/xadrez-console/xadrez-console/obj/Debug/net7.0/xadrez-console.AssemblyInfoInputs.cache
+/Users/gui/Projects/xadrez-console/xadrez-console/obj/Debug/net7.0/xadrez-console.AssemblyInfo.cs
+/Users/gui/Projects/xadrez-console/xadrez-console/obj/Debug/net7.0/xadrez-console.csproj.CoreCompileInputs.cache
+/Users/gui/Projects/xadrez-console/xadrez-console/obj/Debug/net7.0/xadrez-console.dll
+/Users/gui/Projects/xadrez-console/xadrez-console/obj/Debug/net7.0/refint/xadrez-console.dll
+/Users/gui/Projects/xadrez-console/xadrez-console/obj/Debug/net7.0/xadrez-console.pdb
+/Users/gui/Projects/xadrez-console/xadrez-console/obj/Debug/net7.0/xadrez-console.genruntimeconfig.cache
+/Users/gui/Projects/xadrez-console/xadrez-console/obj/Debug/net7.0/ref/xadrez-console.dll
