@@ -1,6 +1,6 @@
-﻿using xadrez_console.tabuleiro;
+﻿using board;
 
-Posicao p = new Posicao(4, 3);
+Board test = new Board(8, 8);
 
-Console.WriteLine(p);
+
 
