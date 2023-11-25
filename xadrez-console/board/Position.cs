@@ -3,10 +3,10 @@ namespace board
 {
 	public class Position
 	{
-		public char Column { get; set; }
+		public int Column { get; set; }
         public int Line { get; set; }
 
-        public Position(char column, int line)
+        public Position(int line, int column)
         {
             Column = column;
             Line = line;
@@ -19,7 +19,7 @@ namespace board
 
         public override string ToString()
         {
-            return "" + Column + Line;
+            return "" + Line + Column;
         }
     }
 }
