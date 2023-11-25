@@ -1,10 +1,10 @@
 ﻿using System;
 using board;
-namespace xadrez_console.Chess
+namespace chess
 {
     public class Rook : Piece
     {
-        public Rook(Board board, Color color, Position position) : base(board, color, position)
+        public Rook(Board board, Color color) : base(board, color)
         {
         }
 

@@ -9,9 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Chess\" />
+    <None Remove="chess\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Chess\" />
+    <Folder Include="chess\" />
   </ItemGroup>
 </Project>

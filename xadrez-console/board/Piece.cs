@@ -12,6 +12,12 @@ namespace board
 		{
 		}
 
+        public Piece(Board board, Color color)
+        {
+            Board = board;
+            Color = color;
+        }
+
         public Piece(Board board, Color color, Position position)
         {
             Board = board;
@@ -19,6 +25,8 @@ namespace board
             Position = position;
             this.MovimentsQty = 0;
         }
+
+
     }
 }
 

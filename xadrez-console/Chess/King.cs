@@ -1,10 +1,10 @@
 ﻿using System;
 using board;
-namespace xadrez_console.Chess
+namespace chess
 {
 	public class King : Piece
 	{
-		public King(Board board, Color color, Position position) : base(board, color, position)
+		public King(Board board, Color color) : base(board, color)
 		{
 		}
 
