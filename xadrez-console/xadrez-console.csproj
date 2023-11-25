@@ -8,10 +8,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <None Remove="board\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="board\" />
-  </ItemGroup>
 </Project>

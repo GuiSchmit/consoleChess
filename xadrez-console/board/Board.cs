@@ -5,14 +5,20 @@ namespace board
 	{
         public int Column { get; set; }
         public int Line { get; set; }
-		public Piece[,] pieces;
+		private Piece[,] pieces;
 
-        public Board(int column, int line)
+        public Board(int line, int column)
         {
             Column = column;
             Line = line;
-            pieces = new Piece[column, line];
+            pieces = new Piece[line, column];
         }
+
+        public Piece piece(int line, int column)
+        {
+            return pieces[line, column];
+        }
+
     }
 }
 
