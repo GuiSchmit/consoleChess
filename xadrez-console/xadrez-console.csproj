@@ -8,10 +8,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <None Remove="chess\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="chess\" />
-  </ItemGroup>
 </Project>
