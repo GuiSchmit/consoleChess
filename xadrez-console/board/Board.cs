@@ -50,6 +50,21 @@ namespace board
             p.Position = pos;
         }
 
+        public Piece RemovePiece(Position pos)
+        {
+            if (piece(pos) == null)
+            {
+                return null;
+            }
+            else
+            {
+                Piece aux = piece(pos);
+                aux.Position = null;
+                pieces[pos.Line, pos.Column] = null;
+                return aux;
+            }
+        }
+
 
         //Testa se a posicao nao ultrapassa os limites do tabuleiro
         public bool PositionValid(Position pos)

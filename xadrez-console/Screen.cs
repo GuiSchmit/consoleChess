@@ -1,5 +1,5 @@
 ﻿using board;
-
+using chess;
 
 namespace xadrez_console
 {
@@ -45,6 +45,15 @@ namespace xadrez_console
 				Console.Write(piece);
 				Console.ForegroundColor = aux;
 			}
+		}
+
+
+		public static ChessPosition readChessPosition()
+		{
+			string s = Console.ReadLine();
+			char column = s[0];
+			int line = int.Parse(s[1]+"");
+			return new ChessPosition(column, line);
 		}
 
 	}

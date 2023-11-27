@@ -4,18 +4,24 @@ using xadrez_console;
 
 try
 {
-    Board board = new Board(8, 8);
+    ChessMatch match = new ChessMatch();
 
-    board.InsertPiece(new King(board, Color.White), new Position(3, 5));
-    board.InsertPiece(new King(board, Color.Black), new Position(3, 2));
-    board.InsertPiece(new Rook(board, Color.Black), new Position(2, 5));
-    board.InsertPiece(new Rook(board, Color.White), new Position(3, 0));
+    while (match.end == false)
+    {
+        Console.Clear();
+
+        Screen.PrintBoard(match.board);
+
+        Console.WriteLine("");
+        Console.Write("Origem: ");
+        Position origin = Screen.readChessPosition().toPosition();
+        Console.Write("Destino: ");
+        Position dest = Screen.readChessPosition().toPosition();
+
+        match.executMoviment(origin, dest);
+    }
 
 
-
-
-
-    Screen.PrintBoard(board);
 }
 catch (BoardException e)
 {

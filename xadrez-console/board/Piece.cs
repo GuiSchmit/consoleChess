@@ -26,6 +26,11 @@ namespace board
             this.MovimentsQty = 0;
         }
 
+        public void increaseMovimentsQty()
+        {
+            MovimentsQty++;
+        }
+
 
     }
 }
