@@ -15,7 +15,7 @@ namespace board
             pieces = new Piece[line, column];
         }
 
-
+    
         //Methodos para obter peça de determinada posicao
         public Piece piece(int line, int column)
         {

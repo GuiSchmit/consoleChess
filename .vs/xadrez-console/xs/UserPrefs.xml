@@ -1,4 +1,40 @@
 ﻿<Properties StartupConfiguration="{8D00183E-39C9-4A1A-BA21-9BBEB7302064}|Default">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.xadrez-console FirstBuild="True" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="xadrez-console/Screen.cs">
+    <Files>
+      <File FileName="xadrez-console/Program.cs" Line="13" Column="33" />
+      <File FileName="xadrez-console/Board/Board.cs" Line="22" Column="1" />
+      <File FileName="xadrez-console/Board/Color.cs" Line="1" Column="1" />
+      <File FileName="xadrez-console/Board/Piece.cs" Line="15" Column="46" />
+      <File FileName="xadrez-console/Board/Position.cs" Line="22" Column="40" />
+      <File FileName="xadrez-console/Screen.cs" Line="37" Column="1" />
+      <File FileName="xadrez-console/Chess/King.cs" Line="15" Column="10" />
+      <File FileName="xadrez-console/Chess/Rook.cs" Line="7" Column="67" />
+      <File FileName="xadrez-console/board/BoardException.cs" Line="6" Column="55" />
+      <File FileName="xadrez-console/chess/ChessPosition.cs" Line="20" Column="57" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="xadrez-console">
+            <Node name="xadrez-console">
+              <Node name="chess" expanded="True" />
+              <Node name="Screen.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="ClassPad">
+        <State name="__root__">
+          <Node name="xadrez-console" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.xadrez-console PreferredExecutionTarget="MonoDevelop.Default" />
 </Properties>
