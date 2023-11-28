@@ -8,29 +8,41 @@ try
     ChessMatch match = new ChessMatch();
     while (match.end == false)
     {
-        Console.Clear();
+        try
+        {
+            Console.Clear();
 
-        Screen.PrintBoard(match.board);
-
-        Console.WriteLine("");
-        Console.Write("Origem: ");
-        Position origin = Screen.readChessPosition().toPosition();
-
-        Console.WriteLine(origin);
-        Console.WriteLine(origin.Line);
-        Console.WriteLine(origin.Column);
-        Console.WriteLine(match.board.piece(origin));
-
-        bool[,] possiblePositions = match.board.piece(origin).possibleMoviments();
+            Screen.PrintBoard(match.board);
+            Console.WriteLine("");
+            Console.WriteLine("Turn: " + match.turn + " (Waiting for " + match.currentPlayer + ")");
 
 
-        Console.Clear();
-        Screen.PrintBoard(match.board, possiblePositions);
+            Console.WriteLine("");
+            Console.Write("Please enter the origin position: ");
+            Position origin = Screen.readChessPosition().toPosition();
 
-        Console.Write("Destino: ");
-        Position dest = Screen.readChessPosition().toPosition();
+            match.originPositionValidation(origin);
 
-        match.executMoviment(origin, dest);
+            bool[,] possiblePositions = match.board.piece(origin).possibleMoviments();
+
+            Console.Clear();
+            Screen.PrintBoard(match.board, possiblePositions);
+
+            Console.WriteLine("");
+            Console.WriteLine("Turn: " + match.turn + " (Waiting for " + match.currentPlayer + ")");
+            Console.WriteLine("");
+            Console.Write("Please enter the destination position: ");
+            Position dest = Screen.readChessPosition().toPosition();
+            match.destinationPositionValidation(origin, dest);
+
+            match.makesMove(origin, dest);
+        }
+        catch (BoardException e)
+        {
+            Console.WriteLine(e.Message);
+            Console.WriteLine("Press ENTER to continue: ");
+            Console.ReadLine();
+        }
     }
 
 }
