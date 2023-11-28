@@ -43,6 +43,9 @@ try
         }
     }
 
+    Console.Clear();
+    Screen.printMatch(match);
+
 }
 catch (BoardException e)
 {

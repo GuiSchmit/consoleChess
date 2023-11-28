@@ -72,8 +72,15 @@ namespace chess
 				Check = false;
 			}
 
-			turn++;
-			changePlayer();
+			if (testCheckmate(oppnentColor(currentPlayer)) == true)
+			{
+				end = true;
+			}
+			else
+			{
+                turn++;
+                changePlayer();
+            }
 		}
 
 		public void originPositionValidation(Position pos)
@@ -181,6 +188,39 @@ namespace chess
             return false;
         }
 
+		public bool testCheckmate(Color color)
+		{
+			if (check(color) == false)
+			{
+				return false;
+			}
+
+			foreach (Piece p in piecesInGame(color))
+			{
+				bool[,] mat = p.possibleMoviments();
+
+				for (int i = 0; i<board.Line; i++)
+				{
+					for (int j = 0; j<board.Column; j++)
+					{
+						if (mat[i, j] == true)
+						{
+							Position origin = p.Position;
+							Position dest = new Position(i, j);
+							Piece capturedPiece = executMoviment(origin, dest);
+							bool testCheck = check(color);
+							undoMoviment(origin, dest, capturedPiece);
+							if (testCheck == false)
+							{
+								return false;
+							}
+						}
+					}
+				}
+			}
+			return true;
+		}
+
         public void insertNewPiece(char column, int line, Piece piece)
 		{
 			board.InsertPiece(piece, new ChessPosition(column, line).toPosition());
@@ -191,14 +231,13 @@ namespace chess
 		{
 			//White pieces
 			insertNewPiece('e', 1, new King(board, Color.White));
-            insertNewPiece('a', 1, new Rook(board, Color.White));
-			insertNewPiece('h', 1, new Rook(board, Color.White));
+            insertNewPiece('c', 1, new Rook(board, Color.White));
+			insertNewPiece('h', 7, new Rook(board, Color.White));
 
 
 			//Black pieces
-            insertNewPiece('e', 8, new King(board, Color.Black));
-            insertNewPiece('a', 8, new Rook(board, Color.Black));
-			insertNewPiece('h', 8, new Rook(board, Color.Black));
+            insertNewPiece('a', 8, new King(board, Color.Black));
+            insertNewPiece('b', 8, new Rook(board, Color.Black));
         }
     }
 }

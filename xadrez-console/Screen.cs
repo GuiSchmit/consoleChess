@@ -12,12 +12,25 @@ namespace xadrez_console
             Console.WriteLine("");
             printCapturedPieces(match);
             Console.WriteLine("");
-            Console.WriteLine("Turn: " + match.turn + " (Waiting for " + match.currentPlayer + ")");
-            if (match.Check == true)
+            Console.WriteLine("Turn: " + match.turn);
+
+            if (match.end == false)
             {
+                Console.WriteLine("Waiting for " + match.currentPlayer + "...");
+
+                if (match.Check == true)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("CHECK!");
+                }
+            } else
+            {
+                Console.WriteLine("Checkmate!!!");
                 Console.WriteLine("");
-                Console.WriteLine("CHECK!");
+                Console.WriteLine("The winner is: " + match.currentPlayer);
             }
+
+            
             Console.WriteLine("");
 
         }
