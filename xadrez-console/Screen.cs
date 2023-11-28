@@ -11,6 +11,15 @@ namespace xadrez_console
             PrintBoard(match.board);
             Console.WriteLine("");
             printCapturedPieces(match);
+            Console.WriteLine("");
+            Console.WriteLine("Turn: " + match.turn + " (Waiting for " + match.currentPlayer + ")");
+            if (match.Check == true)
+            {
+                Console.WriteLine("");
+                Console.WriteLine("CHECK!");
+            }
+            Console.WriteLine("");
+
         }
 
 		public static void PrintBoard(Board board)

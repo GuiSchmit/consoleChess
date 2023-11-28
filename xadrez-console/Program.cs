@@ -12,13 +12,9 @@ try
         {
             Console.Clear();
             Screen.printMatch(match);
-            Console.WriteLine("");
-
-            Console.WriteLine("Turn: " + match.turn + " (Waiting for " + match.currentPlayer + ")");
-
-
-            Console.WriteLine("");
+            
             Console.Write("Please enter the origin position: ");
+
             Position origin = Screen.readChessPosition().toPosition();
 
             match.originPositionValidation(origin);
