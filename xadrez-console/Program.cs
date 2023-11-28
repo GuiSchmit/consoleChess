@@ -11,9 +11,9 @@ try
         try
         {
             Console.Clear();
-
-            Screen.PrintBoard(match.board);
+            Screen.printMatch(match);
             Console.WriteLine("");
+
             Console.WriteLine("Turn: " + match.turn + " (Waiting for " + match.currentPlayer + ")");
 
 
@@ -36,6 +36,8 @@ try
             match.destinationPositionValidation(origin, dest);
 
             match.makesMove(origin, dest);
+
+
         }
         catch (BoardException e)
         {

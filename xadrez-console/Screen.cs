@@ -6,6 +6,13 @@ namespace xadrez_console
 	public class Screen
 	{
 
+        public static void printMatch(ChessMatch match)
+        {
+            PrintBoard(match.board);
+            Console.WriteLine("");
+            printCapturedPieces(match);
+        }
+
 		public static void PrintBoard(Board board)
 		{
 
@@ -73,8 +80,32 @@ namespace xadrez_console
             }
         }
 
+        public static void printCapturedPieces(ChessMatch match)
+        {
+            Console.WriteLine("Captured Pieces:");
+            Console.Write("White");
+            printSet(match.capturedPieces(Color.White));
+            Console.WriteLine();
+            Console.Write("Black");
+            ConsoleColor aux = Console.ForegroundColor;
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            printSet(match.capturedPieces(Color.Black));
+            Console.ForegroundColor = aux;
+            Console.WriteLine("");
+        }
 
-		public static ChessPosition readChessPosition()
+        public static void printSet(HashSet<Piece> set)
+        {
+            Console.Write("[");
+            foreach (Piece p in set)
+            {
+                Console.Write(p + ", ");
+            }
+
+            Console.Write("]");
+        }
+
+        public static ChessPosition readChessPosition()
 		{
 			string s = Console.ReadLine();
 			char column = s[0];
