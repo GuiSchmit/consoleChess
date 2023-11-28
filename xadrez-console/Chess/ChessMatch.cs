@@ -29,12 +29,13 @@ namespace chess
 		private void insertPieces()
 		{
             board.InsertPiece(new King(board, Color.White), new ChessPosition('e', 1).toPosition());
-            board.InsertPiece(new Rook(board, Color.White), new ChessPosition('a', 1).toPosition());
+            board.InsertPiece(new Rook(board, Color.White), new ChessPosition('a', 2).toPosition());
             board.InsertPiece(new Rook(board, Color.White), new ChessPosition('h', 1).toPosition());
 
             board.InsertPiece(new King(board, Color.Black), new ChessPosition('e', 8).toPosition());
-            board.InsertPiece(new Rook(board, Color.Black), new ChessPosition('a', 8).toPosition());
             board.InsertPiece(new Rook(board, Color.Black), new ChessPosition('h', 8).toPosition());
+            board.InsertPiece(new Rook(board, Color.Black), new ChessPosition('a', 5).toPosition());
+
 
         }
     }

@@ -1,7 +1,7 @@
 ﻿
 namespace board
 {
-	public class Piece
+	public abstract class Piece
 	{
 		public Board Board { get; set; }
 		public Color Color { get; set; }
@@ -30,6 +30,9 @@ namespace board
         {
             MovimentsQty++;
         }
+
+        public abstract bool[,] possibleMoviments();
+        
 
 
     }

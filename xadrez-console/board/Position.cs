@@ -12,14 +12,15 @@ namespace board
             Line = line;
         }
 
-        public Position()
-		{
-		}
-
-
         public override string ToString()
         {
             return Line + ", " + Column;
+        }
+
+        public void defineValues(int line, int column)
+        {
+            this.Line = line;
+            this.Column = column;
         }
     }
 }
