@@ -52,7 +52,7 @@ namespace board
             return false;
         }
 
-        public bool canMoveTo(Position pos)
+        public bool possibleMoviment(Position pos)
         {
             if (possibleMoviments()[pos.Line, pos.Column] == true)
             {
