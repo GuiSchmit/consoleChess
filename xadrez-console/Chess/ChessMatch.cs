@@ -38,6 +38,29 @@ namespace chess
 			{
 				captured.Add(capturedPiece);
 			}
+
+
+
+			//SMALL CASTLE
+			if (p is King && dest.Column == origin.Column + 2)
+			{
+				Position rookOrigin = new Position(origin.Line, origin.Column + 3);
+				Position rookDest = new Position(origin.Line, origin.Column + 1);
+				Piece r = board.RemovePiece(rookOrigin);
+				r.increaseMovimentsQty();
+				board.InsertPiece(r, rookDest);
+			}
+
+			//BIG CASTLE
+			if (p is King && dest.Column == origin.Column - 2)
+			{
+				Position rookOrigin = new Position(origin.Line, origin.Column - 4);
+				Position rookDest = new Position(origin.Line, origin.Column - 1);
+				Piece r = board.RemovePiece(rookOrigin);
+				r.increaseMovimentsQty();
+				board.InsertPiece(r, rookDest);
+			}
+
 			return capturedPiece;
 		}
 
@@ -51,6 +74,26 @@ namespace chess
 				captured.Remove(capturedPiece);
 			}
 			board.InsertPiece(p, origin);
+
+			//SMALL CASTLE
+			if (p is King && dest.Column == origin.Column - 2)
+			{
+				Position rookOrigin = new Position(origin.Line, origin.Column + 3);
+				Position rookDest = new Position(origin.Line, origin.Column + 1);
+				Piece r = board.RemovePiece(rookDest);
+				r.decreaseMovimentQty();
+				board.InsertPiece(r, rookOrigin);
+			}
+
+			//BIG CASTLE
+			if (p is King && dest.Column == origin.Column - 2)
+			{
+				Position rookOrigin = new Position(origin.Line, origin.Column - 4);
+				Position rookDest = new Position(origin.Line, origin.Column - 1);
+				Piece r = board.RemovePiece(rookDest);
+				r.decreaseMovimentQty();
+				board.InsertPiece(r, rookOrigin);
+			}
 		}
 
 		public void makesMove(Position origin, Position dest)
@@ -239,13 +282,11 @@ namespace chess
             insertNewPiece('g', 2, new Pawn(board, Color.White));
             insertNewPiece('h', 2, new Pawn(board, Color.White));
 
-
-            insertNewPiece('e', 1, new King(board, Color.White));
             insertNewPiece('a', 1, new Rook(board, Color.White));
-			insertNewPiece('h', 1, new Rook(board, Color.White));
-            insertNewPiece('c', 1, new Bishop(board, Color.White));
-            insertNewPiece('f', 1, new Bishop(board, Color.White));
-            insertNewPiece('d', 1, new Queen(board, Color.White));
+            
+            insertNewPiece('e', 1, new King(board, Color.White, this));
+            
+            insertNewPiece('h', 1, new Rook(board, Color.White));
 
 
             //Black pieces
@@ -253,17 +294,16 @@ namespace chess
             insertNewPiece('b', 7, new Pawn(board, Color.Black));
             insertNewPiece('c', 7, new Pawn(board, Color.Black));
             insertNewPiece('d', 7, new Pawn(board, Color.Black));
-            insertNewPiece('e', 3, new Pawn(board, Color.Black));
+            insertNewPiece('e', 7, new Pawn(board, Color.Black));
             insertNewPiece('f', 7, new Pawn(board, Color.Black));
             insertNewPiece('g', 7, new Pawn(board, Color.Black));
             insertNewPiece('h', 7, new Pawn(board, Color.Black));
 
-            insertNewPiece('e', 8, new King(board, Color.Black));
             insertNewPiece('a', 8, new Rook(board, Color.Black));
+           
+            insertNewPiece('e', 8, new King(board, Color.Black, this));
+            
             insertNewPiece('h', 8, new Rook(board, Color.Black));
-            insertNewPiece('c', 8, new Bishop(board, Color.Black));
-            insertNewPiece('f', 8, new Bishop(board, Color.Black));
-            insertNewPiece('d', 8, new Queen(board, Color.Black));
         }
     }
 }
