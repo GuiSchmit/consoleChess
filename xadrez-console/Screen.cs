@@ -1,4 +1,5 @@
-﻿using board;
+﻿
+using board;
 using chess;
 
 namespace xadrez_console
@@ -127,9 +128,10 @@ namespace xadrez_console
             Console.Write("]");
         }
 
-        public static ChessPosition readChessPosition()
+        public static ChessPosition readChessPosition(Board board)
 		{
             string s = Console.ReadLine();
+            board.testInput(s);
             char column = s[0];
             int line = int.Parse(s[1] + "");
             return new ChessPosition(column, line);
@@ -137,4 +139,3 @@ namespace xadrez_console
 
 	}
 }
-

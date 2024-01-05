@@ -87,6 +87,17 @@ namespace board
             }
         }
 
+        public bool testInput(string s)
+        {
+            if (s.Length != 2)
+            {
+                throw new BoardException("Invalid position.");
+
+            }
+
+            return true;
+        }
+
     }
 }
 

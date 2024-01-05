@@ -15,7 +15,7 @@ try
             
             Console.Write("Please enter the origin position: ");
 
-            Position origin = Screen.readChessPosition().toPosition();
+            Position origin = Screen.readChessPosition(match.board).toPosition();
 
             match.originPositionValidation(origin);
 
@@ -28,7 +28,7 @@ try
             Console.WriteLine("Turn: " + match.turn + " (Waiting for " + match.currentPlayer + ")");
             Console.WriteLine("");
             Console.Write("Please enter the destination position: ");
-            Position dest = Screen.readChessPosition().toPosition();
+            Position dest = Screen.readChessPosition(match.board).toPosition();
             match.destinationPositionValidation(origin, dest);
 
             match.makesMove(origin, dest);
